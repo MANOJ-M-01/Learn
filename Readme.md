@@ -7,9 +7,9 @@ https://markdownlivepreview.com/
 
 #### 1.1 PHP OOPS
 
-1. https://coursesweb.net/php-mysql  🔥 (contains all oops concepts with clean eg.)
-2.(Bindto) https://www.simonholywell.com/post/2015/04/php-function-objects/  
-https://www.php.net/manual/en/closure.bindto.php
+1. https://coursesweb.net/php-mysql  🔥 (contains all oops concepts with clean eg.)  
+2.https://www.simonholywell.com/post/2015/04/php-function-objects/  
+https://www.php.net/manual/en/closure.bindto.php  
     
     
 
