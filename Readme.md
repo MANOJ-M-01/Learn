@@ -10,7 +10,7 @@ https://markdownlivepreview.com/
 1. https://coursesweb.net/php-mysql  🔥 (contains all oops concepts with clean eg.)  
 2. https://www.simonholywell.com/post/2015/04/php-function-objects/  
 https://www.php.net/manual/en/closure.bindto.php  
-    
+3. https://www.zend.com/blog/what-php-class (small blog notes)
     
 
 ### 2. NodeJS
