@@ -20,3 +20,22 @@
       this.text = $text;
       return this;
   }
+
+
+    https://www.simonholywell.com/post/2015/04/php-function-objects/
+    https://www.php.net/manual/en/closure.bindto.php
+
+
+
+    https://stackoverflow.com/questions/8940825/get-key-of-multidimensional-array
+    array_key()
+    get array key name
+
+    public function store($datas){
+     $name=$datas['name'];
+      return  $this->$$name=$key;
+    }
+    
+    https://stackoverflow.com/questions/8289307/array-push-for-associative-arrays
+    $datas=(array) $json;
+    https://stackoverflow.com/questions/4345554/convert-a-php-object-to-an-associative-array
