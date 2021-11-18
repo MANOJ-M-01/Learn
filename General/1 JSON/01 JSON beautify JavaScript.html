@@ -1,0 +1,13 @@
+<pre>
+    <div class="a"></div>
+</pre>
+<script>
+    // https://stackoverflow.com/questions/2614862/how-can-i-beautify-json-programmatically
+
+    let jsObj={name:"ram",age:10};
+
+    $a=JSON.stringify(jsObj, null, "\t"); // stringify with tabs inserted at each level
+    $b=JSON.stringify(jsObj, null, 4);    // stringify with 4 spaces at each level
+
+    document.querySelector('.a').innerHTML=$a;
+</script>
