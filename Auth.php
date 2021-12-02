@@ -21,22 +21,26 @@ class Auth{
         if(isset($this->session[$field])){
             $data=$this->session[$field];
             $roleLenght=count($conditions);
-
-            for($i=0;$i<$roleLenght;$i++){
-                $condition=$conditions[$i];
-                if (in_array($data,$conditions))
-                {
-                echo "Match found";
+            $verify=[];
+            if($roleLenght>0){
+                for($i=0;$i<$roleLenght;$i++){
+                    $condition=$conditions[$i];
+                    if($data==$condition){
+                        $Granted=true;
+                    }else{
+                        $Granted=false;
+                    }
+                    $verify[]=$Granted;
                 }
-                    else
-                {
-                echo "Match not found";
+                if(in_array(false,$verify)){
+                    $Access=false;
+                }else{
+                    $Access=True;
                 }
+                $res=$Access;
+            }else{
+                $res=null;
             }
-            var_dump($res);
-            exit();
-
- 
         }else{
             $res=null;
         }
@@ -62,10 +66,8 @@ class Auth{
 
 $obj=new Auth();
 // $datas=$obj->start();
-$AuthCheck=$obj->hasRole('role',['sdsd','ADMIN','WORKER']); 
-var_dump($AuthCheck);
-exit();
-if($AuthCheck==false){
+$AuthCheck=$obj->hasRole('role',['ADMIN','WORKER']);  //return bool
+if($AuthCheck==false || $AuthCheck==NULL){
     // header('location:4.php');
     // exit();
     echo "redirect";
@@ -73,9 +75,8 @@ if($AuthCheck==false){
 
 $FieldExist=$obj->AuthData('usermail');
 
-// //$datas=$obj->logout();
+// $datas=$obj->logout();
 
 if($FieldExist){
     var_dump($FieldExist);
 }
-
