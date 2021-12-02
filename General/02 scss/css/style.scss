@@ -1,0 +1,87 @@
+@import  "component/general";
+@import  "component/header";
+@import  "component/footer";
+
+.container{
+    width: 100%;
+    height: 400px;
+    background: red;
+}
+
+
+@mixin prefix($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+      -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+  }
+  
+  .gray {
+    @include prefix(filter, grayscale(50%), moz webkit);
+  }
+  
+  .info-page {
+    margin: auto {
+      bottom: 10px;
+      top: 2px;
+    }
+  }
+  
+  $rounded-corners: false;
+
+.button {
+  border: 1px solid black;
+  border-radius: if($rounded-corners, 5px, null);
+}
+
+
+
+
+.accordion {
+    max-width: 600px;
+    margin: 4rem auto;
+    width: 90%;
+    font-family: "Raleway", sans-serif;
+    background: #f4f4f4;
+  
+    &__copy {
+      display: none;
+      padding: 1rem 1.5rem 2rem 1.5rem;
+      color: gray;
+      line-height: 1.6;
+      font-size: 14px;
+      font-weight: 500;
+  
+      &--open {
+        display: block;
+      }
+    }
+  }
+  
+  .ul-style
+  {
+    ul
+    {
+      list-style-type:none;
+      li{
+        color:red;
+      }  }
+  
+  }
+
+  .big__image{
+      @include image__container;
+  }
+
+  .lg__image{
+      color:red;
+    @extend .ul-style;
+}
+
+
+button{
+    color:#349;
+    .theme-dark &{
+      color: #fff
+  }
+  }
