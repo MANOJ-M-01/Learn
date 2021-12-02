@@ -17,6 +17,11 @@ class Pagination{
         *   pagination styles
         *
         */
+        if(isset($this->styles['page-container'])){
+            $pageboxStyle=$this->styles['page-container'];
+        }else{
+            $pageboxStyle="";
+        }
         if(isset($this->styles['page-style'])){
             $pageStyle=$this->styles['page-style'];
         }else{
@@ -68,7 +73,12 @@ class Pagination{
                 }
             }
         } 
-        return $page;
+        $allpages="";
+        foreach($page as $pages){
+            $allpages=$allpages.$pages;
+        }
+        $data='<div class="'.$pageboxStyle.'">'.$allpages.'</div>';
+        return $data;
     }
 
 }
