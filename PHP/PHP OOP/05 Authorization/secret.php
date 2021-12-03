@@ -14,3 +14,5 @@ $FieldExist=$Auth->AuthData('usermail');
 if($FieldExist){
     echo $FieldExist;
 }
+
+echo '<br/><br/><a href="logout.php">Logout</a>';
