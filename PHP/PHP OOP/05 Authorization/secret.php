@@ -2,8 +2,6 @@
 require_once './controller/Auth.php';
  
 $Auth=new Auth();
- 
-
 
 $AuthCheck=$Auth->hasRole('role',['ADMIN','WORKER']);  //return bool
 if($AuthCheck==false || $AuthCheck==NULL){
