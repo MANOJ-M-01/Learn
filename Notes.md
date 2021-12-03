@@ -43,7 +43,7 @@
 
 ## 2 Unique ID in php
 
-  echo '<br/>'.md5(uniqid(rand(), true)).'<br/>';
+    echo md5(uniqid(rand(), true));
   
   
   
