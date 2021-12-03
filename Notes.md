@@ -46,4 +46,12 @@
     echo md5(uniqid(rand(), true));
   
   
-  
+## 3 Binary 
+
+select with case sensitive
+
+https://www.w3schools.com/sql/func_mysql_binary.asp  
+
+    SELECT * FROM users WHERE BINARY user_name="manoj";  
+
+
