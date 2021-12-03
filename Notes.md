@@ -39,3 +39,11 @@
     https://stackoverflow.com/questions/8289307/array-push-for-associative-arrays
     $datas=(array) $json;
     https://stackoverflow.com/questions/4345554/convert-a-php-object-to-an-associative-array
+
+
+## 2 Unique ID in php
+
+  echo '<br/>'.md5(uniqid(rand(), true)).'<br/>';
+  
+  
+  
