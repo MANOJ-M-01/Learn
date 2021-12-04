@@ -1,6 +1,6 @@
 <?php
-class Auth{
-
+class Auth{ 
+    
     private $session;
     public $ID;
     public $UserName;
@@ -12,12 +12,25 @@ class Auth{
     public function __construct(){
         session_start();
         $this->session=$_SESSION;
-        $this->ID=$_SESSION['userid'];
-        $this->UserName=$_SESSION['username'];
-        $this->Mail=$_SESSION['usermail'];
-        $this->Role=$_SESSION['role'];
-        $this->Level=$_SESSION['level'];
-        $this->Phone=$_SESSION['phone'];
+        
+        if(isset($this->session['userid'])){
+            $this->ID=$this->session['userid'];
+        }
+        if(isset($this->session['username'])){
+            $this->UserName=$this->session['username'];
+        } 
+        if(isset($this->session['usermail'])){
+            $this->Mail=$this->session['usermail'];
+        } 
+        if(isset($this->session['role'])){
+            $this->Role=$this->session['role'];
+        } 
+        if(isset($this->session['level'])){
+            $this->Level=$this->session['level'];
+        } 
+        if(isset($this->session['phone'])){
+            $this->Phone=$this->session['phone'];
+        }
     }
 
     public function isLoggedIn(){
@@ -30,7 +43,7 @@ class Auth{
     /* 
     *   first column name, second list of athorized roles 
     *   checks user role and returns boolean
-    *   if second parameter is empty, returns true then all roles are authorized
+    *
     */
 
     public function hasRole($field,$conditions){
