@@ -42,11 +42,10 @@ class Auth{
                 for($i=0;$i<$roleLenght;$i++){
                     $condition=$conditions[$i];
                     if($data==$condition){
-                        $Granted=true;
+                        $verify[]=true;
                     }else{
-                        $Granted=false;
+                        $verify[]=false;
                     }
-                    $verify[]=$Granted;
                 }
                 if(in_array(true,$verify)){
                     return true;
@@ -54,7 +53,7 @@ class Auth{
                 return false;
             }
         }
-        return null;
+        return true;
     }
 
 }
