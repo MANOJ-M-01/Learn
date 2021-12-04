@@ -30,7 +30,7 @@ class Auth{
     /* 
     *   first column name, second list of athorized roles 
     *   checks user role and returns boolean
-    *
+    *   if second parameter is empty, returns true then all roles are authorized
     */
 
     public function hasRole($field,$conditions){
