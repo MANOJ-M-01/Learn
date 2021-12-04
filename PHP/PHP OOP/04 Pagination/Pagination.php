@@ -40,16 +40,16 @@ class Pagination{
         $page=[]; 
         for($i=1;$i<=$this->pages;$i++) {
             if ($i==$curPage) { 
-                $page[]='<a class="'.$pageStyle.' '.$pageStyleActive.'" title="Current Page" href="'.$this->link.'">'.$i.'</a>';
+                $page[]='<a class="'.$pageStyle.' '.$pageStyleActive.'" title="Current Page" href="'.$this->link.'page='.$i.'">'.$i.'</a>';
             } else {
                 if ($this->pages==$i) {
                     if ($curPage==1) { 
                         $page[]='<a class="'.$pageStyle.'" title="More Page"  >....</a>';  
                     } 
-                    $page[]='<a class="'.$pageStyle.'" title="Last Page"  href="'.$this->link.'">'.$i.'</a>';
+                    $page[]='<a class="'.$pageStyle.'" title="Last Page"  href="'.$this->link.'page='.$i.'">'.$i.'</a>';
                 }
                 if ($i==1) { 
-                    $page[]='<a class="'.$pageStyle.'" title="First Page"  href="'.$this->link.'">'.$i.'</a>';
+                    $page[]='<a class="'.$pageStyle.'" title="First Page"  href="'.$this->link.'page='.$i.'">'.$i.'</a>';
                     $morePageStart=$i+1;
                     if (($curPage-1)>$morePageStart) { 
                         $page[]='<a class="'.$pageStyle.'" title="More Page">...</a>';
@@ -57,7 +57,7 @@ class Pagination{
                 }
                 if ($i==($curPage+1)) {
                     if (!($curPage==($this->pages-1))) { 
-                        $page[]='<a class="'.$pageStyle.'" title="Got To This Page"  href="'.$this->link.'">'.$i.'</a>';
+                        $page[]='<a class="'.$pageStyle.'" title="Got To This Page"  href="'.$this->link.'page='.$i.'">'.$i.'</a>';
                         $morePageEnd=$curPage+2;
                         if (!($curPage==1)) {
                             if ($morePageEnd<$this->pages) { 
@@ -68,7 +68,7 @@ class Pagination{
                 }
                 if ($i==($curPage-1)) {
                     if (!($curPage==2)) {
-                        $page[]='<a class="'.$pageStyle.'" title="Got To This Page"  href="'.$this->link.'">'.$i.'</a>';    
+                        $page[]='<a class="'.$pageStyle.'" title="Got To This Page"  href="'.$this->link.'page='.$i.'">'.$i.'</a>';    
                     }
                 }
             }

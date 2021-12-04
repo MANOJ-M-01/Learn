@@ -3,7 +3,12 @@ require 'Pagination.php';
 
 $curPage=1;
 if(isset($_GET['page'])){
-    $curPage=$_GET['page'];
+    $pageNo=$_GET['page'];
+    if(is_numeric($pageNo)){
+        $curPage=$pageNo;
+    }else{
+        $curPage=1;
+    }
 }
 
 /*
@@ -15,7 +20,7 @@ if(isset($_GET['page'])){
 
 /* pagination variable fillable */
 $totalPages=10;
-$hLink='/index.php?page';
+$hLink='/index.php?';
 $pageStyle=[
         "page-container"=>"page-box",
         "page-style"=>"pages",
