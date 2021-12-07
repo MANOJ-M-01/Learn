@@ -1,0 +1,11 @@
+nodejs
+https://www.youtube.com/feed/subscriptions
+https://github.com/gitdagray/node_js_resources
+
+closecursor php
+https://youtu.be/rVt3UsEg4CQ?list=TLPQMDcxMjIwMjEEIgPLzPvzEQ&t=1510
+https://www.php.net/manual/en/pdostatement.closecursor.php
+
+
+Dave Gray
+https://www.youtube.com/playlist?list=PLUunMkZlWdP1GM0Ti_c1SMR5xehD57ghX
