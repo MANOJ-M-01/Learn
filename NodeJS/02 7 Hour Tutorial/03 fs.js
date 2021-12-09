@@ -8,6 +8,11 @@ fs.readFile('./files/loream.txt',(err,data)=>{
     console.log(data.toString())
 });
 
+// check if file exists
+if(fs.existsSync('./files/loream.txt')){
+    console.log('file exists')
+}
+
 // 2 insterd of tostring we can use utf-8 specifier berfore callback
 fs.readFile('./files/loream.txt','utf-8',(err,data)=>{
     if(err) throw err
