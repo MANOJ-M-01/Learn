@@ -15,3 +15,14 @@ function getData(url){
 
 let url='https://jsonplaceholder.typicode.com/todos';
 getData(url).then(console.log);
+
+
+// Reference
+
+// Async JavaScript Part 1: What is AJAX?
+// https://www.youtube.com/watch?v=wdvruTuWvW8
+
+// Wrap AJAX in a Promise - JavaScript Promises Tutorial
+// https://www.youtube.com/watch?v=MYOaw8ZrwGU
+
+
