@@ -9,3 +9,8 @@ https://alpinejs.dev/start-here
 
 https://alpinejs.dev/directives/data  
 https://codepen.io/ryangjchandler/pen/qBOEgjg  
+
+
+### live Todo Preview
+
+https://codepen.io/manoj-m-01/pen/GRMxmzM
