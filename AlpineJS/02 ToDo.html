@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://www.unpkg.com/alpinejs" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins';
+            font-size: 22px;
+        }
+
+        .d-f {
+            display: flex;
+        }
+
+        .d-f button {
+            height: 30px;
+            width: 30px;
+            color: red;
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        .border {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div x-data="app">
+        <form @submit.prevent="addTask(1)">
+            <input type="text" name="" id="" x-model="newpost">
+        </form>
+        <template x-for="post in posts" :key="index">
+            <div class="d-f">
+                <h2 x-text="post.title"></h2>
+                <button @click="removeTask(post.id)">&cross;</button>
+            </div>
+        </template>
+    </div>
+</body>
+<script>
+    /*
+    // method 1
+    Apline.data('app', () => {
+        return {
+            posts: [{ id: 1, title: "Java Programming Basic" }, { id: 2, title: "Datastructure and Algorithm" }]
+        }
+    });
+    */
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('app', () => ({
+            posts: [{ id: 1, title: "Java Programming Basic" }, { id: 2, title: "Datastructure and Algorithm" }],
+            newpost: '',
+            count: 3,
+            addTask() {
+                this.newPost = { id: this.count, title: this.newpost };
+                this.posts = [this.newPost, ...this.posts];
+                this.count++;
+                this.newpost = '';
+            },
+            removeTask(id) {
+                this.posts = this.posts.filter(data => data.id != id)
+            }
+        }))
+    })
+
+</script>
+
+</html>

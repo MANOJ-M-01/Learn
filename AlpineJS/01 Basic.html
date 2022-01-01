@@ -1,0 +1,28 @@
+<script src="https://www.unpkg.com/alpinejs" defer></script>
+
+<style>
+    .border {
+        border: 1px solid red;
+    }
+</style>
+<div x-data="{ open: false }">
+    <button @click="open = !open" x-bind:class="! open ? 'border' : ''">Expand</button>
+
+    <span x-show="open">
+        Content...
+    </span>
+</div>
+<div x-data='app()'>
+    <button @click.prevent="addPerson()">increment</button>
+    <h1 x-text="count"></h1>
+</div>
+<script>
+    function app() {
+        return {
+            count: 0,
+            addPerson() {
+                this.count++;
+            }
+        }
+    }
+</script>
