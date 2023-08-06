@@ -1,0 +1,91 @@
+docker images
+docker pull nginx:1.23
+docker pull nginx:latest
+docker run nginx:1.23
+docker ps
+docker ps -a [all container whether they are running are stopped]
+
+
+-d detach(deamon)
+-p port binding
+
+https://youtu.be/pg19Z8LL06w?t=2189
+docker run image in background
+docker run -d nginx:1.23
+
+log of container
+docker log [contaiernID]
+docker logs 4154857de0de
+
+we can run docker without pull. it will locally if it can't find it it will go to check on docker hub
+then it pull 
+https://youtu.be/pg19Z8LL06w?t=2289
+docker run nginx:1.22-alpine
+
+
+stop container
+docker stop 4154857de0de
+
+https://youtu.be/pg19Z8LL06w?t=2507
+access docker on our local machine
+-p {HOST_PORT}:{CONTAINER_PORTci}
+
+
+docker run mysql:8.0
+
+    You need to specify one of the following as an environment variable:
+    - MYSQL_ROOT_PASSWORD
+    - MYSQL_ALLOW_EMPTY_PASSWORD
+    - MYSQL_RANDOM_ROOT_PASSWORD
+
+https://vsupalov.com/docker-arg-env-variable-guide/
+ docker run -e "env_var_name=another_value" alpine env
+
+
+
+multipler env on docker run
+https://stackoverflow.com/questions/30494050/how-do-i-pass-environment-variables-to-docker-containers
+ sudo docker run -d -t -i -e NAMESPACE='staging' -e PASSWORD='foo' busybox sh
+
+
+docker run -d -t -i -e 'MYSQL_ROOT_PASSWORD=123' -e 'MYSQL_USER=root' -e 'MYSQL_PASSWORD=123' -e 'MYSQL_DATABASE=user' mysql:8.0
+docker run -t -i -e MYSQL_ROOT_PASSWORD='123' -e MYSQL_USER='root' -e MYSQL_PASSWORD='123' -e MYSQL_DATABASE='user' mysql:8.0
+
+
+
+docker stop
+docker system prune
+
+
+
+
+
+docker build -t node-app:1.0 .
+
+
+docker run -p 3000:3000 node-app:1.0
+
+
+
+
+docker build -t node-app:1.0 .
+
+
+docker run -p 3000:3000 node-app:1.0
+
+docker run -p 3000:3000 -v $PWD:/app -v /app/node_modules  node-app:1.0
+
+
+
+
+
+
+
+
+docker build -t my-app .
+docker run -i -v [path to your project]:/usr/src/app:delegated \ -v /usr/src/app/node_modules/ -p 3000:3000 [your container name]
+docker run -i -v /usr/src/app:delegated  -v /usr/src/app/node_modules/ -p 3000:3000 my-app
+
+docker run -i -v /usr/src/app  -v /usr/src/app/node_modules/ -p 4000:4000 my-app
+
+

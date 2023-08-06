@@ -1,0 +1,40 @@
+you need to learn Docker RIGHT NOW!! // Docker Containers 101
+https://youtu.be/eGz9DS-aIeY?list=PLUunMkZlWdP3VZYtdJLex0bgyEz7B3k_k
+
+docker pull centos
+https://youtu.be/eGz9DS-aIeY?list=PLUunMkZlWdP3VZYtdJLex0bgyEz7B3k_k&t=589
+
+
+docker run -d -t --name cantcontainmyself centos
+docker ps
+docker exec -it cantcontainmyself bash
+docker pull alpine
+docker image list
+docker run -t -d --name ohyeah alpine
+docker exec -it ohyeah sh
+
+https://youtu.be/eGz9DS-aIeY?list=PLUunMkZlWdP3VZYtdJLex0bgyEz7B3k_k&t=723
+ubuntu:14.04
+ubuntu:16.04
+ubuntu:18.04
+wordpress
+
+https://youtu.be/eGz9DS-aIeY?list=PLUunMkZlWdP3VZYtdJLex0bgyEz7B3k_k&t=850
+docker pull thenetworkchuck/nccoffee:frenchpress
+docker run -t -d -p 80:80 --name nccoffee thenetworkchuck/nccoffee:frenchpress
+
+
+docker stop ohyeah
+docker start ohyeah
+
+docker pull archlinux
+
+
+
+
+
+https://youtu.be/DM65_JyGxCo?t=97
+sudo apt install docker.io docker-compose -y
+
+
+sudo docker run --name web -itd -p 8080:80 nginx
