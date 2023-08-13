@@ -1,0 +1,1 @@
+Error: [8] Undefined variable: undefinedVariable - C:\Users\Manoj\Videos\work\13-08-23\Error Logging, Sessions, Login System in Function\01 error logging.php:21
